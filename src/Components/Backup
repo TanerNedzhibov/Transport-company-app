@@ -1,0 +1,89 @@
+import React, { useState } from 'react'
+import Button from '@mui/material/Button';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import { deleteTruck } from '../Assets/Requests';
+import EditCard from './EditCard';
+
+
+const TruckCard = ({id, icon, truckNumber, model, km, maintenance, insurance, insurance2, chekup, tachoGraph, setClicked}) => {
+
+  const [open, setOpen] = React.useState(false);
+  const [openEdit, setOpenEdit] = useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const handleDelete = () => {
+    deleteTruck(id);
+    setClicked(true);
+    setOpen(false);
+  }
+
+  return (
+    <div>
+      <div id='truckCard' onClick={handleClickOpen}>
+      <div style={{height: "80px", display: "grid", placeItems: "center"}}>
+        <img src={icon} style={{maxHeight: "50px"}}/>
+      </div>
+        <div style={{fontSize: "17px", marginBottom: "20px", textAlign: "center"}}>{truckNumber}</div>
+      </div>
+      <Dialog
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+        sx={{ '& .MuiDialog-paper': { 
+          boxShadow: "0px 0px 20px 3px",
+          borderRadius: "5px"
+      } }}
+      >
+        {openEdit ? 
+          <EditCard 
+          id={id} 
+          icon={icon} 
+          truckNumber={truckNumber} 
+          model={model}
+          km={km}
+          maintenance={maintenance}
+          insurance={insurance}
+          insurance2={insurance2}
+          chekup={chekup}
+          tachoGraph={tachoGraph}
+          setClicked={setClicked}
+          setOpen={setOpen}/> :
+        <div>
+        <DialogContent sx={{width: "400px", height: "450px"}}>
+          <div style={{height: "80px", display: "grid", placeItems: "center", marginBottom: "20px"}}>
+          <img src={icon} style={{maxHeight: "80px"}}/>
+          </div>
+          <div style={{fontSize: "23px", fontWeight: "bold", marginBottom: "60px", textAlign: "center"}}>{truckNumber}</div>
+          <div id='TruckCardText'>
+            <div className='TCtext'>Модел:  {model}</div>
+            <div className='TCtext'>Км: {km} км</div>
+            <div className='TCtext'>Обслужване: {maintenance} км</div>
+            <div className='TCtext'>Застраховка:  {insurance}</div>
+            <div className='TCtext'>Каско:  {insurance2}</div>
+            <div className='TCtext'>Техн. преглед:  {chekup}</div>
+            <div className='TCtext'>Тахограф преглед: {tachoGraph}</div>
+          </div>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleDelete}>Изтриване</Button>
+          <Button onClick={() => setOpenEdit(true)}>
+            Редактиране
+          </Button>
+        </DialogActions>
+        </div>}
+      </Dialog>
+    </div>
+  )
+}
+
+export default TruckCard

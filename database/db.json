@@ -1,0 +1,96 @@
+{
+  "CMR": [
+    {
+      "documentNumber": "0000001",
+      "truckNumber": "X 1111 XX",
+      "destinationB": "B",
+      "destinationE": "NL",
+      "date": "31-05-2023",
+      "km": "180",
+      "pdfFile": "1.pdf",
+      "id": 1
+    },
+    {
+      "documentNumber": "0000002",
+      "truckNumber": "X 2222 XX",
+      "destinationB": "FR",
+      "destinationE": "B",
+      "date": "24-05-2023",
+      "km": "250",
+      "pdfFile": "2.pdf",
+      "id": 2
+    },
+    {
+      "documentNumber": "0000003",
+      "truckNumber": "X 1111 XX",
+      "destinationB": "NL",
+      "destinationE": "BG",
+      "date": "03-05-2023",
+      "km": "2500",
+      "pdfFile": "3.pdf",
+      "id": 3
+    }
+  ],
+  "Trucks": [
+    {
+      "icon": "/static/media/DAF.b6028cbe694a65981895.png",
+      "truckNumber": "X 1111 XX",
+      "model": "EURO 6",
+      "km": 52680,
+      "maintenance": "90000",
+      "insurance": "2023-07-30",
+      "insurance2": "2023-07-30",
+      "chekup": "2023-07-30",
+      "tachoGraph": "2023-07-30",
+      "id": 1
+    },
+    {
+      "icon": "/static/media/Renault.938192cf8aecf44d994d.png",
+      "truckNumber": "X 2222 XX",
+      "model": "EURO 6",
+      "km": 80250,
+      "maintenance": "120000",
+      "insurance": "2023-05-31",
+      "insurance2": "2023-05-31",
+      "chekup": "2023-05-31",
+      "tachoGraph": "2023-05-31",
+      "id": 2
+    },
+    {
+      "icon": "/static/media/VW.317747f9a565968ca4c8.png",
+      "truckNumber": "X 3333 XX ",
+      "model": "GOLF",
+      "km": "150000",
+      "maintenance": "160000",
+      "insurance": "2023-09-24",
+      "insurance2": "2023-09-24",
+      "chekup": "2023-09-24",
+      "tachoGraph": "",
+      "id": 3
+    },
+    {
+      "icon": "/static/media/Audi.e257c89109d860579681.png",
+      "truckNumber": "X 4444 XX",
+      "model": "A5",
+      "km": "75000",
+      "maintenance": "85000",
+      "insurance": "2023-10-24",
+      "insurance2": "2023-10-24",
+      "chekup": "2023-10-24",
+      "tachoGraph": "",
+      "id": 4
+    },
+    {
+      "icon": "/static/media/DAF.b6028cbe694a65981895.png",
+      "truckNumber": "X 5555",
+      "model": "EURO 6",
+      "km": "400000",
+      "maintenance": "490000",
+      "insurance": "2023-06-19",
+      "insurance2": "2023-06-19",
+      "chekup": "2023-06-19",
+      "tachoGraph": "2023-06-19",
+      "id": 5
+    }
+  ]
+}
